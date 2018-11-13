@@ -1,7 +1,7 @@
 version: '3'
 services:
   selenium:
-    command: ["python3.6", "scripts/relation.py", "${TARGET_USER}"]
+    command: ["python3.6", "scripts/test.py"]
     environment:
       - PYTHONUNBUFFERED=0
     build:
