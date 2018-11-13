@@ -1,0 +1,14 @@
+version: '3'
+services:
+  selenium:
+    command: ["python3.6", "scripts/test.py"]
+    environment:
+      - PYTHONUNBUFFERED=0
+    build:
+      context: .
+      dockerfile: ./images/python/Dockerfile
+    volumes:
+      - ./scripts:/scripts
+      - ./conf:/conf
+    shm_size: 128M
+
