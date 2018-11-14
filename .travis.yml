@@ -18,7 +18,6 @@ script:
   - |
     (
       set -xe
-      docker build -t "$IMAGE" -f images/python/Dockerfile .
       docker-compose up
     )
 
