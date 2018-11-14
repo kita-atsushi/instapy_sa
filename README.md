@@ -1,4 +1,4 @@
-# instapy_sa
+# instapy_sa [![Build Status](https://travis-ci.org/kita-atsushi/instapy_sa.svg?branch=master)](https://travis-ci.org/kita-atsushi/instapy_sa)
 
 Run instagram bot script in docker container contains selenium webdriver.
 
