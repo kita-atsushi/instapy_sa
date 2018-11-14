@@ -108,7 +108,7 @@ browser = webdriver.Chrome(
 )
 time.sleep(1)
 browser.get(OPEN_URL)
-time.sleep(5)
+time.sleep(15)
 
 if _is_private():
     browser.close()
