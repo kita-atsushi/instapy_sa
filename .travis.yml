@@ -11,8 +11,8 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 before_script:
-  - IMAGE=instapy_sa
-  - TARGET_USER=futmoji_k455
+  - export IMAGE=instapy_sa
+  - export TARGET_USER=futmoji_k455
 
 script:
   - |
