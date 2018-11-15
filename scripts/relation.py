@@ -12,6 +12,10 @@ from selenium.common.exceptions import StaleElementReferenceException
 
 
 args = sys.argv
+if len(args) != 2:
+    print("Usage: relation.py <username>")
+    sys.exit(0)
+
 target_account = args[1]
 content_amount = 10
 OPEN_URL = "https://www.instagram.com/%s" % (target_account)
