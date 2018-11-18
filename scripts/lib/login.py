@@ -42,6 +42,8 @@ def login(username, password):
     passwordField = browser.find_element_by_xpath(PASSWORDPATH)
     passwordField.send_keys(password)
     passwordField.send_keys(Keys.RETURN)
+    time.sleep(3)
+
     return browser
 
 print("@@@ Login start with %s" % (username))
