@@ -21,7 +21,6 @@ script:
   - |
     (
       set -xe
-      echo PASSWORD=${PASSWORD}
       docker-compose up
     )
 
