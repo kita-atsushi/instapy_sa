@@ -4,7 +4,7 @@ services: docker
 env:
   global:
       - DOCKER_COMPOSE_VERSION=1.23.0
-      - secure: "SKLEqAAaqkuPpesHbvZ5qIR6iBdH4/YmisSlL4bQK+h9mckio0/wFwgk0T5wrYR0LcLlB/bRxC6KEWW6d/2njGpHdmuFSHEQKAGKel5gA0qKR1qABfPN/A7skdoRwG6KREbCvLQblMVl7i2QiafDD+ChBteAe1Ckegn7iAIFwMOBSXAcyIVLyHbYtPUJn91XfxciLnKy7HcZYhWzijltI58pxeH4Hluh6ynHYEPyAstyaXXa2rslmhmqih6JFnSgo600WjBljNLfF5OFuekUGu3Q0XwuKbt0ggAsYHPhE5WAGw8aSZ47Hi+obn++FHtbE0P/qzQ8aGvo7m/tM5+YKG40fzajMprJrEM5UY1KFaE5XqRNzCv4zYR2m2bmx/p2qsPA6L/8fVyRdLZJkzcLOSJZRQuSZPnQ6Ne7LVqXgwp5sNrFNwtZYk2FBjEqPwavKBk0evBgkU6gT+1RmjGEPosxqEMQxV6yGOwViTB6Jb4R8bKAqyqhpxFyiiLXDW+5jsQydaeNKNqy4VBFIlBE4RilAr1yrZOepxKcN0xcRP6o2KGs2fEbxzTmcNrVxriLASZmjy+KoPOlMenVXH34wjzv4igy3Fas5So7v+vDAmWOnosPP+/TnY1XkO9lE+P9Em9d0WxHBQEUT6ctbL0Q2Vhd2kHfjIPX/6prrvmqm+0="
+      - secure: "YwAvdrjzfanHStyvLJwgnhrQ1g48rdeY74pXfEKgk4iTZ6E8y/wrQ1GK+PoUhNqvm6I079Nq12CrbVRbVH405NUjD6nFj4dq4g2MJwq+YDds2YL/2o1O6gf5TGT95UNeRlyCD9jtNKijPIRVdqoysT5UXwPH+TH+FplMQhrPqGOfh/95c7ObJ/C/Y/0xMHbAslV+jEr1Ctpa0hUnHjdmle1JZ6HlhBQ+WVOov0LY8FkLDVd80qhualWzgnYaxe/jY1rKwq4yU4tue8k00BewtRE/3DwEYCUjwjEhpWcH3CZvpQPqPx2a6PyoZgaVsZwsLQfHvOuNa9svAVaNIIOfy13IqI55qPnpBGTUQqJIB1i7yVRsptuj7bWf5aGdlvxqS1QU8GOFzOIDXKgSe4V+10l3iwbvL/4nq7GsTjvcxs8jbl2DtDzT18wUCFYAUjrRXS0Pw0TfUq7zrM47799yibiuEqfmriLvh1DJnUZ5MaiXK/5STgpJ/DDYVSPeAYcr7adg+8Q/gVNAyLLIWcNyV4Uhi10RXZm7hRnGP5WhnHHK6Pbt08GHtlXuK++KJ/XcAYbUYQP+OaCH/cr1P8SIRppRRuIYTgFyZYiG+FBjX0q93DkALoFQwZhdSryJ6Y6rVvOIvp9DP15/sKD6Q5AfoNDdBKFYtfJQJVuoQ/vwhRI="
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -15,6 +15,7 @@ before_install:
 before_script:
   - export IMAGE=instapy_sa
   - export TARGET_USER=futmoji_k455
+  - export TARGET_PASSWORD=${TARGET_PASSWORD}
 
 script:
   - |
