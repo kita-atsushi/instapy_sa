@@ -2,7 +2,9 @@ language: bash
 services: docker
 
 env:
-  - DOCKER_COMPOSE_VERSION=1.23.0
+  global:
+      - DOCKER_COMPOSE_VERSION=1.23.0
+      - secure: "SKLEqAAaqkuPpesHbvZ5qIR6iBdH4/YmisSlL4bQK+h9mckio0/wFwgk0T5wrYR0LcLlB/bRxC6KEWW6d/2njGpHdmuFSHEQKAGKel5gA0qKR1qABfPN/A7skdoRwG6KREbCvLQblMVl7i2QiafDD+ChBteAe1Ckegn7iAIFwMOBSXAcyIVLyHbYtPUJn91XfxciLnKy7HcZYhWzijltI58pxeH4Hluh6ynHYEPyAstyaXXa2rslmhmqih6JFnSgo600WjBljNLfF5OFuekUGu3Q0XwuKbt0ggAsYHPhE5WAGw8aSZ47Hi+obn++FHtbE0P/qzQ8aGvo7m/tM5+YKG40fzajMprJrEM5UY1KFaE5XqRNzCv4zYR2m2bmx/p2qsPA6L/8fVyRdLZJkzcLOSJZRQuSZPnQ6Ne7LVqXgwp5sNrFNwtZYk2FBjEqPwavKBk0evBgkU6gT+1RmjGEPosxqEMQxV6yGOwViTB6Jb4R8bKAqyqhpxFyiiLXDW+5jsQydaeNKNqy4VBFIlBE4RilAr1yrZOepxKcN0xcRP6o2KGs2fEbxzTmcNrVxriLASZmjy+KoPOlMenVXH34wjzv4igy3Fas5So7v+vDAmWOnosPP+/TnY1XkO9lE+P9Em9d0WxHBQEUT6ctbL0Q2Vhd2kHfjIPX/6prrvmqm+0="
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -18,6 +20,7 @@ script:
   - |
     (
       set -xe
+      echo PASSWORD=${PASSWORD}
       docker-compose up
     )
 
