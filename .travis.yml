@@ -2,7 +2,10 @@ language: bash
 services: docker
 
 env:
-  - DOCKER_COMPOSE_VERSION=1.23.0
+  global:
+      - DOCKER_COMPOSE_VERSION=1.23.0
+      - TARGET_USER=futmoji_k455
+      - secure: "aruFsBKmEcemzasXIyrjB6P0RUR3PbKxBVwPk8n2mqlrNabePHiCcqL8JaEYGVepczY958UPdLz0ya04pq6Ng8j59cVphFHCKfqc3NgXF37w1W3c8alzEww+qdVo6jqoqRxYB3msV9RxJy0HMmq9aSAytPJ/SMPb0fQUfDaSJ+rWrrEcbdtSu8Av4yy9JumGWbfwsU0UCNNQo9IYN6y6jvJXj5Ae8ntwpREBApwzwl48w+sCe2+kfpOEVCEISR91RPrLHNwQTBospEzd99w9NQAfW0vEkYyBDWVS26rdRGN2+8Jv1jQQSu5e0iGlhFeSolgvZ8A5dVoSvIg11Lz6YBFdQDtS+Xdq3ngEmHeWvEU5TYPO+ZaH9Gfog9vX/rb/PUI4i3A3af+wRR8Cn+kvgKMs/0CQmdAUZSLL0020QHRY9GiIjgw2nAz4bDZ0c/Xd67pmxt/r6d61rKclAG65YZkWq4REcKP1f6MXEayFwbNeJEc/JDXTv23VVXKurKxG5SEW9y0jjtTgeVpYK36cQyIpB1KKcpqgr79La7Q+9uzV2LpUJ/vWfwjt7J3IxUp54UjvCD6nz2IA3x6zYHuR6gzG4c/rEtR4ANVQzQyQ7aWUlLl6vh6frChnTu617T2GI7hn8xvNCw453VEWF7KfraNyNK//jQ8AUm3k25j7Hgg="
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -10,14 +13,12 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-before_script:
-  - export IMAGE=instapy_sa
-  - export TARGET_USER=futmoji_k455
-
 script:
   - |
     (
       set -xe
+      echo TARGET_USER=${TARGET_USER}
+      echo TARGET_PASSWORD=${TARGET_PASSWORD}
       docker-compose up
     )
 
