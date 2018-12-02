@@ -17,9 +17,9 @@ script:
   - |
     (
       set -xe
-      echo TARGET_USER=${TARGET_USER}
-      echo TARGET_PASSWORD=${TARGET_PASSWORD}
-      docker-compose up
+      export ISSA_VERSION=`cat version.txt`
+      docker-compose build
+      docker run --rm "instapy_sa:${ISSA_VERSION}" -- python3.6 -u /scripts/get_react.py "${TARGET_USER}" "${TARGET_PASSWORD}"
     )
 
 after_script:
