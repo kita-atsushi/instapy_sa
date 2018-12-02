@@ -17,7 +17,7 @@ script:
   - |
     (
       set -xe
-      docker-compose up
+      docker run --rm -- python3.6 -u /scripts/get_react.py "${TARGET_USER}" "${TARGET_PASSWORD}"
     )
 
 after_script:
