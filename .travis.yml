@@ -17,8 +17,6 @@ script:
   - |
     (
       set -xe
-      echo TARGET_USER=${TARGET_USER}
-      echo TARGET_PASSWORD=${TARGET_PASSWORD}
       docker-compose up
     )
 

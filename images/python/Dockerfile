@@ -34,8 +34,18 @@ RUN echo '[google-chrome]' >>"${GOOGLE_REPO_FILE}" \
 RUN yum install -y google-chrome-unstable libOSMesa google-noto-cjk-fonts
 
 # Install selenium
-RUN mkdir /scripts
-RUN mkdir /conf
-
 COPY ./requirements.txt /requirements.txt
 RUN pip3.6 install -r /requirements.txt
+RUN pip3.6 install awscli
+
+# Copy source
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+RUN mkdir -p /conf
+COPY scripts/ /scripts/
+
+# Copy sample config
+COPY ./conf/interact_test.txt /interact_test.txt
+COPY ./conf/black_list_test.txt /black_list_test.txt
+
+ENTRYPOINT source /docker-entrypoint.sh
