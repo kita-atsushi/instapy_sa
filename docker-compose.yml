@@ -1,14 +1,14 @@
 version: '3'
 services:
   selenium:
-    command: ["python3.6", "scripts/get_react.py", "${TARGET_USER}", "${TARGET_PASSWORD}"]
+    command: ["python3.6", "/scripts/get_react.py", "${TARGET_USER}", "${TARGET_PASSWORD}"]
     environment:
       - PYTHONUNBUFFERED=0
+    image: instapy_sa:${ISSA_VERSION}
     build:
       context: .
       dockerfile: ./images/python/Dockerfile
     volumes:
-      - ./scripts:/scripts
       - ./conf:/conf
     shm_size: 128M
 
